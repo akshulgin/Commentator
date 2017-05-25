@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Songs Catalog</title>
+</head>
+<body>
+	<h2>Песенки в наличии</h2>
+	{% for n in songs %}
+		<a href="/song/{{n}}">{{n}}</a><br>
+	{% endfor %}
+	<br>
+	<h2>Поиск по словам в тексте</h2>
+	<form action="search"><input type="text" name="key"><input type="submit"></form>
+	<br>
+	<br>
+	<br><a href="/a">Добавить песни в базу</a>
+</body>
+</html>

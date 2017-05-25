@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Панель добавления песен</title>
+	<style>
+		section {
+			width: 100%;
+			overflow-y: auto;
+		}
+		div {
+			float: left;
+			margin-right: 40px;
+			margin-bottom: 70px;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<h1>Панель управления</h1>
+			<div>
+				<h2>Добавить песню</h2>
+				<form action="/add_song">
+					<input style="font-size: 25px" type="text" name="name" placeholder="Название"><br><br>
+					<textarea wrap="off" name="text" cols="50" rows="26"></textarea><br>
+					<input value="Добавить" type="submit">
+				</form>
+			</div>
+		{% for n in songs %}
+			<div>
+				<h2>{{n}}</h2>
+				<form action="/change_song/{{n}}"><textarea wrap="off" name="text" cols="50" rows="30">{{songs[n]}}</textarea><br><input value="Изменить" type="submit"></form>
+			</div>
+		{% endfor %}
+	</section>
+</body>
+</html>

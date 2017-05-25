@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Результаты поиска</title>
+</head>
+<body>
+	<h1>Были найдены следующие песни</h1>
+	<ul>
+		{% for n in songs %}
+			<li><a href="/song/{{n}}">{{n}}</a></li>
+		{% endfor %}
+	</ul>
+</body>
+</html>
